@@ -34,7 +34,8 @@ const projectData={
     problem:'Spa teams often juggle bookings, therapist availability, client history and payments across separate tools. This product brings those flows together into a structured system.',
     stack:['Python','Django REST','React','PostgreSQL','JWT','M-PESA'],
     highlights:['Role-based booking and operational access','Appointment overlap prevention and scheduling safeguards','Multiple payment paths with receipt workflows'],
-    repo:'https://github.com/22koki/Spa_Management'
+    repo:'https://github.com/22koki/Spa_Management',
+    page:'cases/spa.html'
   },
   restaurant:{
     type:'WEB APP · AUTOMATION',
@@ -43,7 +44,8 @@ const projectData={
     problem:'Restaurant operations can become fragmented between front-of-house, kitchen, stock and finance. The system is designed to connect those workflows in one product.',
     stack:['Django REST','React','REST APIs','Inventory workflows'],
     highlights:['Orders and menu management','Inventory and purchasing workflows','Foundation for POS, kitchen and reporting automation'],
-    repo:'https://github.com/22koki/Restaurant-_Automation_systm'
+    repo:'https://github.com/22koki/Restaurant-_Automation_systm',
+    page:'cases/restaurant.html'
   },
   plant:{
     type:'AI PRODUCT · AGRITECH',
@@ -52,7 +54,8 @@ const projectData={
     problem:'Farmers and home growers often notice visible symptoms before they know the likely cause. This app turns visual symptoms into structured guidance, confidence levels and treatment research.',
     stack:['Django','React','Vision AI','Image analysis','Research layer'],
     highlights:['Camera/upload based plant scanning','Likely condition, confidence and severity output','Treatment, prevention and source-oriented research flow'],
-    repo:'https://github.com/22koki/Plant_DR'
+    repo:'https://github.com/22koki/Plant_DR',
+    page:'cases/plant-doctor.html'
   },
   earth:{
     type:'INTERACTIVE PRODUCT',
@@ -70,7 +73,8 @@ const projectData={
     problem:'Market shopping can be crowded, time-consuming and hard to access. TUKO Market is designed around nearby vendors, fulfillment and last-mile delivery.',
     stack:['Django','React','PostgreSQL','JWT','M-PESA','WhatsApp'],
     highlights:['Customer, vendor, rider and admin roles','Pickup/delivery with vendor confirmation','M-PESA and WhatsApp-centered commerce workflows'],
-    repo:'https://github.com/22koki/TUKO_Market'
+    repo:'https://github.com/22koki/TUKO_Market',
+    page:'cases/tuko.html'
   },
   property:{
     type:'BUSINESS SYSTEM · CONCEPT',
@@ -118,6 +122,7 @@ const modalProblem=document.getElementById('modalProblem');
 const modalStack=document.getElementById('modalStack');
 const modalHighlights=document.getElementById('modalHighlights');
 const modalRepo=document.getElementById('modalRepo');
+const modalCase=document.getElementById('modalCase');
 
 function openProject(key){
   const data=projectData[key];
@@ -129,6 +134,7 @@ function openProject(key){
   modalStack.innerHTML=data.stack.map(item=>'<span>'+item+'</span>').join('');
   modalHighlights.innerHTML=data.highlights.map(item=>'<div>'+item+'</div>').join('');
   modalRepo.href=data.repo;
+  if(data.page){modalCase.href=data.page;modalCase.style.display='inline-flex';}else{modalCase.style.display='none';}
   modal.classList.add('open');
   modal.setAttribute('aria-hidden','false');
   document.body.style.overflow='hidden';
