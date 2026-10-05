@@ -17,7 +17,7 @@
     <nav class="topnav" aria-label="Main navigation">
       <a class="active" href="#home">Home</a><a href="#projects">Projects</a><a href="#services">Services</a><a href="#marketing">Marketing</a><a href="#about">About</a><a href="#contact">Contact</a>
     </nav>
-    <div class="top-actions"><button id="themeToggle" class="icon-btn" aria-label="Toggle theme">☀</button><a class="work-btn" href="#contact">Let's Work Together →</a></div>
+    <div class="top-actions"><div class="mode-switch" role="group" aria-label="Portfolio mode"><button class="mode-btn active" data-mode="client">Client</button><button class="mode-btn" data-mode="recruiter">Recruiter</button></div><button id="commandBtn" class="icon-btn" aria-label="Open command palette">/</button><button id="themeToggle" class="icon-btn" aria-label="Toggle theme">☀</button><a class="work-btn" href="#contact">Let's Work Together →</a></div>
   </header>
 
   <aside class="rail">
@@ -45,16 +45,25 @@
     </section>
 
     <section id="projects" class="section light-section">
-      <div class="section-head"><div><span class="kicker">↗ SELECTED WORK</span><h2>Featured Projects</h2></div><a href="https://github.com/22koki" target="_blank" rel="noreferrer">View GitHub →</a></div>
+      <div class="section-head"><div><span class="kicker">↗ SELECTED WORK</span><h2>Featured Projects</h2><p class="section-intro">Real products, systems and experiments across business operations, AI, marketplaces, experiences and growth.</p></div><a href="https://github.com/22koki" target="_blank" rel="noreferrer">View GitHub →</a></div>
+      <div class="project-toolbar" aria-label="Project filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="systems">Systems</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="ai">AI</button>
+        <button class="filter-btn" data-filter="product">Product</button>
+        <button class="filter-btn" data-filter="marketing">Marketing</button>
+      </div>
       <div class="project-grid">
-        <article class="project-card" style="--bg:url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=80')"><span>WEB APP</span><div><h3>Spa Management System</h3><p>Bookings, therapists, payments, operations and receipts.</p><small>Python · Django · React · PostgreSQL · M-PESA</small></div></article>
-        <article class="project-card" style="--bg:url('https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=80')"><span>WEB APP</span><div><h3>Restaurant Automation</h3><p>Orders, tables, inventory, POS and kitchen workflows.</p><small>Django · React · REST APIs</small></div></article>
-        <article class="project-card" style="--bg:url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=900&q=80')"><span>AI APPLICATION</span><div><h3>Plant Doctor AR</h3><p>AI-assisted diagnosis for plants, lawns, flowers and crops.</p><small>Vision AI · Django · React</small></div></article>
-        <article class="project-card" style="--bg:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80')"><span>TRAVEL APP</span><div><h3>One Minute From Earth</h3><p>Explore destinations through a fast, visual discovery experience.</p><small>React · Vite · Local storage</small></div></article>
-        <article class="project-card" style="--bg:url('https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=900&q=80')"><span>MARKETPLACE</span><div><h3>TUKO Market</h3><p>Multi-vendor local marketplace with delivery and M-PESA.</p><small>Django · React · PostgreSQL</small></div></article>
-        <article class="project-card" style="--bg:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80')"><span>SYSTEM</span><div><h3>Property Management</h3><p>Tenants, rent, maintenance, units, notices and reports.</p><small>Full-stack business system</small></div></article>
-        <article class="project-card" style="--bg:url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80')"><span>SYSTEM</span><div><h3>Hospital Management</h3><p>Patients, appointments, billing, records and operations.</p><small>Database-driven application</small></div></article>
-        <article class="project-card" style="--bg:url('https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=900&q=80')"><span>WEBSITE + MARKETING</span><div><h3>Riverstone Landscapes</h3><p>Landscaping website, service presentation and digital marketing.</p><small>Web · Brand · Content · Growth</small></div></article>
+        <article class="project-card" data-category="systems web" data-project="spa" style="--bg:url('https://raw.githubusercontent.com/22koki/Spa_Management/main/frontend/spa-frontend/src/assets/spa-hero.jpg')"><span>WEB APP</span><div><h3>Spa Management System</h3><p>Bookings, therapists, payments, role-based access and receipts.</p><small>Django · React · PostgreSQL · JWT · M-PESA</small><button class="case-btn">View Case Study ↗</button></div></article>
+        <article class="project-card" data-category="systems web" data-project="restaurant" style="--bg:url('https://raw.githubusercontent.com/22koki/Restaurant-_Automation_systm/main/restaurant_automation_system/ras-frontend/public/images/istockphoto-1150377750-2048x2048.jpg')"><span>WEB APP</span><div><h3>Restaurant Automation</h3><p>Orders, inventory, purchase operations, menu and restaurant workflows.</p><small>Django REST · React · Axios</small><button class="case-btn">View Case Study ↗</button></div></article>
+        <article class="project-card" data-category="ai product web" data-project="plant" style="--bg:url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=900&q=80')"><span>AI APPLICATION</span><div><h3>Plant Doctor AR</h3><p>AI-assisted diagnosis for crops, gardens, flowers, trees and lawns.</p><small>Vision AI · Django · React · Research layer</small><button class="case-btn">View Case Study ↗</button></div></article>
+        <article class="project-card" data-category="product web" data-project="earth" style="--bg:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80')"><span>TRAVEL PRODUCT</span><div><h3>One Minute From Earth</h3><p>A visual travel discovery experience with passports, destinations and exploration.</p><small>React · Vite · Product design</small><button class="case-btn">View Case Study ↗</button></div></article>
+        <article class="project-card" data-category="systems product web" data-project="tuko" style="--bg:url('https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=900&q=80')"><span>MARKETPLACE</span><div><h3>TUKO Market</h3><p>Location-aware marketplace connecting customers, vendors and riders.</p><small>Django · React · PostgreSQL · M-PESA · WhatsApp</small><button class="case-btn">View Case Study ↗</button></div></article>
+        <article class="project-card" data-category="systems" data-project="property" style="--bg:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80')"><span>SYSTEM</span><div><h3>Property Management</h3><p>Tenants, properties, rent, maintenance, notices and management reporting.</p><small>Business systems · Database design · Dashboards</small><button class="case-btn">View Concept ↗</button></div></article>
+        <article class="project-card" data-category="systems" data-project="hospital" style="--bg:url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80')"><span>SYSTEM</span><div><h3>Hospital Management</h3><p>Patient, appointment, billing and clinical operations data workflows.</p><small>Database-driven system · Operations</small><button class="case-btn">View Concept ↗</button></div></article>
+        <article class="project-card" data-category="marketing web" data-project="riverstone" style="--bg:url('https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=900&q=80')"><span>WEB + GROWTH</span><div><h3>Riverstone Landscapes</h3><p>Website presentation, service positioning, content and digital marketing direction.</p><small>Website · Brand · Social · Content · Growth</small><button class="case-btn">View Case Study ↗</button></div></article>
+        <article class="project-card" data-category="product" data-project="ghost" style="--bg:url('https://raw.githubusercontent.com/22koki/tiny-ghost-hotel/master/assets/backgrounds/hauntedhotel.jpg')"><span>GAME PRODUCT</span><div><h3>Tiny Ghost Hotel</h3><p>A cozy-creepy hotel management game with progression, rooms and supernatural guests.</p><small>Godot · Game systems · Creative direction</small><button class="case-btn">View Case Study ↗</button></div></article>
       </div>
     </section>
 
@@ -102,6 +111,37 @@
       <span class="kicker">START SOMETHING</span><h2>Have an idea?<br/><em>Let's make it real.</em></h2>
       <div class="contact-options"><a href="mailto:wahomeimani@gmail.com">Email me →</a><a href="https://github.com/22koki" target="_blank" rel="noreferrer">GitHub →</a><a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn →</a></div>
     </section>
+  <div id="projectModal" class="project-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <article class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" data-close-modal aria-label="Close project">×</button>
+      <span id="modalType" class="modal-type"></span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalSummary" class="modal-summary"></p>
+      <div class="modal-columns">
+        <div><h4>What it solves</h4><p id="modalProblem"></p></div>
+        <div><h4>Built with</h4><div id="modalStack" class="modal-stack"></div></div>
+      </div>
+      <div id="modalHighlights" class="modal-highlights"></div>
+      <div class="modal-actions"><a id="modalRepo" class="btn primary" target="_blank" rel="noreferrer">View GitHub →</a><a href="#contact" class="btn modal-contact" data-close-modal>Build something like this</a></div>
+    </article>
+  </div>
+
+  <div id="commandPalette" class="command-palette" aria-hidden="true">
+    <div class="command-backdrop" data-close-command></div>
+    <div class="command-box" role="dialog" aria-modal="true" aria-label="Command palette">
+      <div class="command-head"><b>COMMAND PALETTE</b><span>ESC to close</span></div>
+      <input id="commandInput" autocomplete="off" placeholder="Type: projects, AI, marketing, hire..."/>
+      <div class="command-list">
+        <button data-command="#projects">↗ Explore projects</button>
+        <button data-command-filter="ai">✦ Show AI work</button>
+        <button data-command-filter="systems">▦ Show business systems</button>
+        <button data-command="#marketing">◎ Show digital marketing</button>
+        <button data-command="#skills">⌘ Show tech stack</button>
+        <button data-command="#contact">→ Hire / start a project</button>
+      </div>
+    </div>
+  </div>
   </main>
   <script src="script.js"></script>
 </body>
