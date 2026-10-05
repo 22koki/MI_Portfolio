@@ -233,3 +233,53 @@ buildButtons.forEach(btn=>btn.addEventListener('click',()=>{
   projectEmail.href='mailto:wahomeimani@gmail.com?subject='+encodeURIComponent(idea+' Project Enquiry')+'&body='+encodeURIComponent("Hi Faith,\n\nI'm interested in building a "+idea+".\n\nHere's the idea:\n\n");
   projectEmail.textContent='Start '+idea+' →';
 }));
+
+const solutions={
+ booking:{title:'Booking + CRM + payment workflow',text:'A custom booking system can centralize availability, customers, staff scheduling, reminders and payments instead of managing everything manually.',tags:['Booking','CRM','Payments','Reminders']},
+ excel:{title:'Custom operations database + dashboard',text:'Replace scattered spreadsheets with structured records, permissions, reporting and automated workflows designed around how the business actually operates.',tags:['Database','Dashboard','Roles','Reports']},
+ orders:{title:'Online ordering + fulfilment system',text:'Give customers a direct ordering experience while staff receive, confirm, prepare, collect payment and track fulfilment from one workflow.',tags:['Ordering','Payments','Inventory','Delivery']},
+ website:{title:'Conversion-focused website + growth layer',text:'Improve the offer, UX, calls to action, search structure, analytics and content so the website works as a business tool instead of a digital brochure.',tags:['UX','SEO','GA4','Lead generation']},
+ manual:{title:'Workflow automation',text:'Map repetitive tasks, identify the right automation points, connect systems and create dashboards so the team spends less time on admin.',tags:['Automation','APIs','Workflows','Dashboards']},
+ idea:{title:'MVP product development',text:'Turn the idea into requirements, user flows, architecture and a focused first release that can be tested before investing in unnecessary complexity.',tags:['Discovery','MVP','UI/UX','Full-stack']}
+};
+document.querySelectorAll('[data-solution]').forEach(btn=>btn.addEventListener('click',()=>{
+  document.querySelectorAll('[data-solution]').forEach(b=>b.classList.toggle('active',b===btn));
+  const s=solutions[btn.dataset.solution];
+  document.getElementById('solutionTitle').textContent=s.title;
+  document.getElementById('solutionText').textContent=s.text;
+}));
+
+const techButtons=[...document.querySelectorAll('[data-tech-filter]')];
+function resetTech(){
+  techButtons.forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.project-card').forEach(card=>card.classList.remove('tech-muted'));
+}
+techButtons.forEach(btn=>btn.addEventListener('click',()=>{
+  const tech=btn.dataset.techFilter;
+  techButtons.forEach(b=>b.classList.toggle('active',b===btn));
+  document.querySelectorAll('.project-card').forEach(card=>{
+    const list=(card.dataset.tech||'').split(' ');
+    card.classList.toggle('tech-muted',!list.includes(tech));
+  });
+  document.querySelector('#projects').scrollIntoView({behavior:'smooth',block:'center'});
+}));
+document.getElementById('resetTech')?.addEventListener('click',resetTech);
+
+document.getElementById('projectForm')?.addEventListener('submit',e=>{
+  e.preventDefault();
+  const data=new FormData(e.currentTarget);
+  const selected=document.querySelector('[data-build].active')?.dataset.build||'Digital project';
+  const subject=selected+' Project Enquiry';
+  const body=[
+    'Hi Faith,','',
+    'Name: '+data.get('name'),
+    'Email: '+data.get('email'),
+    'Project: '+selected,
+    'Budget: '+data.get('budget'),
+    'Timeline: '+data.get('timeline'),'',
+    'Project idea:',
+    data.get('message')
+  ].join('\n');
+  document.getElementById('formStatus').textContent='Opening your prepared project enquiry…';
+  window.location.href='mailto:wahomeimani@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+});
