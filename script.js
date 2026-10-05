@@ -224,3 +224,12 @@ document.querySelectorAll('.project-card,.panel,.process li,.about-copy,.contact
 if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
   document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
 }
+
+const buildButtons=[...document.querySelectorAll('[data-build]')];
+const projectEmail=document.getElementById('projectEmail');
+buildButtons.forEach(btn=>btn.addEventListener('click',()=>{
+  buildButtons.forEach(b=>b.classList.toggle('active',b===btn));
+  const idea=btn.dataset.build;
+  projectEmail.href='mailto:wahomeimani@gmail.com?subject='+encodeURIComponent(idea+' Project Enquiry')+'&body='+encodeURIComponent("Hi Faith,\n\nI'm interested in building a "+idea+".\n\nHere's the idea:\n\n");
+  projectEmail.textContent='Start '+idea+' →';
+}));
