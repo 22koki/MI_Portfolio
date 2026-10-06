@@ -91,10 +91,29 @@
 </section>
 
 <section id="constellation" class="constellation">
-  <div class="constellation-copy"><span class="kicker">TECH CONSTELLATION</span><h2>Skills connected to real work.</h2><p>Click a technology to see which portfolio projects use it.</p><button id="resetTech">Reset constellation</button></div>
+  <div class="constellation-copy"><span class="kicker">TECH CONSTELLATION</span><h2>Skills connected to real work.</h2><p>The stack moves around a live developer globe. Click any technology to reveal the projects it powers.</p><button id="resetTech">Reset constellation</button></div>
   <div class="tech-orbit">
-    <button data-tech-filter="django">Django</button><button data-tech-filter="react">React</button><button data-tech-filter="postgresql">PostgreSQL</button><button data-tech-filter="mpesa">M-PESA</button><button data-tech-filter="api">REST APIs</button><button data-tech-filter="ai">Vision AI</button><button data-tech-filter="javascript">JavaScript</button><button data-tech-filter="godot">Godot</button><button data-tech-filter="database">Databases</button><button data-tech-filter="marketing">Marketing</button>
-    <div class="orbit-core"><b>FAITH.DEV</b><small>BUILD SYSTEMS</small></div>
+    <div class="orbit-track" aria-label="Interactive technology orbit">
+      <button style="--a:0deg" data-tech-filter="django"><span>Django</span></button>
+      <button style="--a:36deg" data-tech-filter="react"><span>React</span></button>
+      <button style="--a:72deg" data-tech-filter="postgresql"><span>PostgreSQL</span></button>
+      <button style="--a:108deg" data-tech-filter="mpesa"><span>M-PESA</span></button>
+      <button style="--a:144deg" data-tech-filter="api"><span>REST APIs</span></button>
+      <button style="--a:180deg" data-tech-filter="ai"><span>Vision AI</span></button>
+      <button style="--a:216deg" data-tech-filter="javascript"><span>JavaScript</span></button>
+      <button style="--a:252deg" data-tech-filter="godot"><span>Godot</span></button>
+      <button style="--a:288deg" data-tech-filter="database"><span>Databases</span></button>
+      <button style="--a:324deg" data-tech-filter="marketing"><span>Marketing</span></button>
+    </div>
+    <div class="orbit-core">
+      <div class="globe-shell">
+        <i class="globe-ring ring-a"></i><i class="globe-ring ring-b"></i><i class="globe-ring ring-c"></i>
+        <span class="float-tech f1">{ }</span><span class="float-tech f2">API</span><span class="float-tech f3">SQL</span><span class="float-tech f4">AI</span><span class="float-tech f5">&lt;/&gt;</span>
+        <div class="core-copy"><b>FAITH.DEV</b><small>BUILD SYSTEMS</small></div>
+      </div>
+    </div>
+    <div class="orbit-pulse pulse-one"></div><div class="orbit-pulse pulse-two"></div>
+    <div class="orbit-caption"><span>LIVE STACK</span><small>10 technologies · 8 showcased builds</small></div>
   </div>
 </section>
 
