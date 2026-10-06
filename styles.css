@@ -225,3 +225,82 @@ repeating-linear-gradient(0deg,transparent 0 21px,rgba(223,255,148,.04) 22px 23p
   .orbit-track button span{min-width:64px;max-width:82px;font-size:7.5px;padding:7px 8px}
   .orbit-track button{transform:rotate(var(--a)) translateX(116px) rotate(calc(var(--a) * -1))}
 }
+
+/* === Mobile fit + no-overlap pass === */
+html,body{max-width:100%;overflow-x:hidden}
+img,svg,video,canvas{max-width:100%}
+section,main,header,footer,.contact-shell,.dashboard,.constellation,.about,.process{min-width:0}
+.hero-copy,.hero-stats,.hero-signature,.contact-main,.contact-console{min-width:0}
+
+@media(max-width:760px){
+  .topbar{gap:10px;padding:0 12px}
+  .brand{grid-template-columns:28px auto;min-width:0}
+  .brand-mark{width:24px;height:24px}
+  .brand>span{font-size:13px}
+  .brand small{font-size:7px;white-space:nowrap}
+  .top-actions{margin-left:auto;gap:6px}
+  .menu-toggle,.icon-btn{width:40px;height:40px;min-width:40px;padding:0}
+  .hero{min-height:820px;background-position:62% center}
+  .hero-copy{position:relative;left:auto;right:auto;top:auto;padding:118px 18px 0;max-width:none}
+  .hero h1{font-size:clamp(40px,12vw,54px);line-height:.98;overflow-wrap:anywhere}
+  .hero-copy p{font-size:13px;line-height:1.6}
+  .hero-cta{flex-direction:column;align-items:stretch}
+  .hero-cta .btn{width:100%}
+  .proof-strip{gap:8px 14px;font-size:10px}
+  .hero-signature{position:relative;left:auto;top:auto;margin:34px 18px 0}
+  .signature{font-size:29px}
+  .hero-stats{position:relative;right:auto;top:auto;bottom:auto;width:auto;margin:22px 18px 34px;display:grid;grid-template-columns:repeat(3,1fr);padding:10px}
+  .hero-stats div{padding:10px 7px;border-bottom:0;border-right:1px solid rgba(255,255,255,.08)}
+  .hero-stats div:last-child{border-right:0}
+  .hero-stats b{font-size:18px}
+  .scroll-note{display:none}
+  .section-head{align-items:flex-start;gap:12px;flex-direction:column}
+  .section-head h2{font-size:30px}
+  .filters{max-width:100%;overflow-x:auto;display:flex;flex-wrap:nowrap;padding-bottom:4px}
+  .filter{flex:0 0 auto}
+  .project-card{width:100%;min-width:0}
+  .project-card h3{font-size:22px;overflow-wrap:anywhere}
+  .dashboard{padding:8px;gap:8px}
+  .panel{padding:16px}
+  .mini-grid{grid-template-columns:1fr}
+  .skill-cloud{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .skill-cloud span{min-width:0;overflow-wrap:anywhere}
+  .growth-services{grid-template-columns:1fr}
+  .marketing-system{grid-template-columns:1fr}
+  .problem-grid{grid-template-columns:1fr}
+  .process{grid-template-columns:1fr;padding:28px 16px}
+  .process ol{grid-template-columns:1fr}
+  .about-copy{padding:36px 18px}
+  .about-copy h2{font-size:35px;overflow-wrap:anywhere}
+  .contact-shell{padding:76px 18px 54px;gap:26px}
+  .contact-main h2{font-size:clamp(42px,13vw,58px);overflow-wrap:anywhere}
+  .contact-lead{font-size:13px}
+  .build-options{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .build-options button{width:100%;min-width:0;padding:10px 8px;font-size:9px}
+  .project-form{max-width:100%}
+  .form-row{grid-template-columns:1fr}
+  .project-form input,.project-form select,.project-form textarea{font-size:16px}
+  .project-form button{width:100%;justify-self:stretch}
+  .contact-options{max-width:none!important;width:100%;margin:0!important}
+  .contact-options a{width:100%;text-align:center}
+  .contact-console{width:100%;overflow:hidden}
+  .console-body{overflow-wrap:anywhere}
+  .site-footer{padding-left:18px;padding-right:18px}
+}
+
+@media(max-width:520px){
+  .brand small{display:none}
+  .hero h1{font-size:40px}
+  .hero-stats{grid-template-columns:1fr}
+  .hero-stats div{border-right:0;border-bottom:1px solid rgba(255,255,255,.08)}
+  .hero-stats div:last-child{border-bottom:0}
+  .build-options{grid-template-columns:1fr}
+  .skill-cloud{grid-template-columns:1fr 1fr}
+  .constellation{padding-left:14px;padding-right:14px;overflow:hidden}
+  .tech-orbit{width:100%;max-width:340px;min-height:340px;overflow:visible}
+  .orbit-track{inset:10%}
+  .orbit-track button{transform:rotate(var(--a)) translateX(98px) rotate(calc(var(--a) * -1))}
+  .orbit-track button span{min-width:58px;max-width:72px;font-size:7px;padding:6px 7px}
+  .orbit-core,.globe-shell{width:145px;height:145px}
+  .orbit-caption{bottom:8px;white-space:normal;text-align:center;width:88%;justify-content:center;flex-wrap:wrap}
+}
