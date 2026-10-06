@@ -17,11 +17,20 @@
     <nav class="topnav" aria-label="Main navigation">
       <a class="active" href="#home">Home</a><a href="#projects">Projects</a><a href="#services">Services</a><a href="#marketing">Marketing</a><a href="#about">About</a><a href="#contact">Contact</a>
     </nav>
-    <div class="top-actions"><div class="mode-switch" role="group" aria-label="Portfolio mode"><button class="mode-btn active" data-mode="client">Client</button><button class="mode-btn" data-mode="recruiter">Recruiter</button></div><button id="commandBtn" class="icon-btn" aria-label="Open command palette">/</button><button id="themeToggle" class="icon-btn" aria-label="Toggle theme">☀</button><a class="work-btn" href="#contact">Let's Work Together →</a></div>
+    <div class="top-actions"><button id="menuToggle" class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button><div class="mode-switch" role="group" aria-label="Portfolio mode"><button class="mode-btn active" data-mode="client">Client</button><button class="mode-btn" data-mode="recruiter">Recruiter</button></div><button id="commandBtn" class="icon-btn" aria-label="Open command palette">/</button><button id="themeToggle" class="icon-btn" aria-label="Toggle theme">☀</button><a class="work-btn" href="#contact">Let's Work Together →</a></div>
   </header>
 
-  <aside class="rail">
-    <a href="#home">⌂ <span>Home</span></a><a href="#projects">▣ <span>Projects</span></a><a href="#services">◇ <span>Services</span></a><a href="#marketing">↗ <span>Marketing</span></a><a href="#skills">✣ <span>Skills</span></a><a href="#process">◫ <span>Process</span></a><a href="#contact">✉ <span>Contact</span></a>
+  <div class="menu-backdrop" id="menuBackdrop" aria-hidden="true"></div>
+  <aside class="rail" id="siteMenu" aria-hidden="true">
+    <div class="rail-head"><span>EXPLORE</span><button id="menuClose" aria-label="Close menu">×</button></div>
+    <a href="#home"><b>01</b><span>Home</span></a>
+    <a href="#projects"><b>02</b><span>Projects</span></a>
+    <a href="#services"><b>03</b><span>Services</span></a>
+    <a href="#marketing"><b>04</b><span>Marketing</span></a>
+    <a href="#skills"><b>05</b><span>Skills</span></a>
+    <a href="#process"><b>06</b><span>Process</span></a>
+    <a href="#contact"><b>07</b><span>Contact</span></a>
+    <div class="rail-foot"><small>FAITH.DEV</small><span>BUILD · AUTOMATE · GROW</span></div>
   </aside>
 
   <main>
@@ -113,11 +122,20 @@
         <div class="skill-cloud"><span>Python</span><span>Django</span><span>Flask</span><span>JavaScript</span><span>React</span><span>Flutter</span><span>Dart</span><span>PostgreSQL</span><span>MySQL</span><span>HTML/CSS</span><span>PHP</span><span>Godot</span><span>REST APIs</span><span>Git & GitHub</span><span>M-PESA APIs</span><span>GA4</span><span>SEO</span></div>
       </div>
 
-      <div id="marketing" class="panel marketing-panel">
-        <div class="panel-title"><div><span>◎ DIGITAL MARKETING</span><small>More than just development</small></div></div>
-        <div class="social-row"><span>Instagram</span><span>TikTok</span><span>LinkedIn</span><span>YouTube</span></div>
-        <div class="growth-graph"><i style="--h:28%"></i><i style="--h:46%"></i><i style="--h:39%"></i><i style="--h:62%"></i><i style="--h:50%"></i><i style="--h:76%"></i><i style="--h:88%"></i></div>
-        <div class="marketing-tags"><span>Content Strategy</span><span>SEO</span><span>GA4</span><span>Campaigns</span><span>Conversion</span></div>
+      <div id="marketing" class="panel marketing-panel growth-lab">
+        <div class="panel-title marketing-title"><div><span>◎ GROWTH LAB</span><small>Marketing connected to the product, not added as an afterthought</small></div><em>STRATEGY → CONTENT → DATA → IMPROVE</em></div>
+        <div class="marketing-intro"><h3>Build the product.<br><i>Then help people find it.</i></h3><p>I combine development with practical digital growth: clear positioning, content systems, search visibility, analytics and conversion thinking.</p></div>
+        <div class="growth-services">
+          <article><span>01</span><b>Positioning & Content</b><p>Clarify the offer, audience and message, then turn it into website, campaign and social content.</p></article>
+          <article><span>02</span><b>SEO & Discoverability</b><p>Search-friendly structure, content planning and technical foundations that make the product easier to find.</p></article>
+          <article><span>03</span><b>Analytics & Insight</b><p>GA4 thinking, event tracking and reporting structures that show what users actually do.</p></article>
+          <article><span>04</span><b>Campaign Support</b><p>Landing pages, creative direction and campaign journeys designed around a clear action.</p></article>
+        </div>
+        <div class="marketing-system">
+          <div><small>CHANNELS</small><span>Instagram</span><span>TikTok</span><span>LinkedIn</span><span>YouTube</span><span>Search</span></div>
+          <div><small>GROWTH TOOLS</small><span>GA4</span><span>SEO</span><span>Content strategy</span><span>Landing pages</span><span>Conversion UX</span></div>
+          <div class="marketing-bridge"><small>THE ADVANTAGE</small><strong>One person can understand the code, the customer journey and the campaign.</strong><a href="#contact">Plan growth with me →</a></div>
+        </div>
       </div>
 
       <div class="panel availability-card">
@@ -158,7 +176,7 @@
 
           <form id="projectForm" class="project-form">
             <div class="form-row"><label>Name<input name="name" required placeholder="Your name"></label><label>Email<input type="email" name="email" required placeholder="you@example.com"></label></div>
-            <div class="form-row"><label>Budget<select name="budget"><option>Let's discuss</option><option>Under $500</option><option>$500 – $1,500</option><option>$1,500 – $5,000</option><option>$5,000+</option></select></label><label>Timeline<select name="timeline"><option>Flexible</option><option>ASAP</option><option>1–4 weeks</option><option>1–3 months</option><option>3+ months</option></select></label></div>
+            <div class="form-row single"><label>Timeline<select name="timeline"><option>Flexible / let's discuss</option><option>ASAP</option><option>1–4 weeks</option><option>1–3 months</option><option>3+ months</option></select></label></div>
             <label>Tell me about the idea<textarea name="message" required rows="4" placeholder="What are you trying to build or improve?"></textarea></label>
             <button type="submit">Prepare Project Enquiry →</button>
             <small id="formStatus">Your email app will open with the project details prepared.</small>
