@@ -251,9 +251,16 @@ const projectEmail=document.getElementById('projectEmail');
 buildButtons.forEach(btn=>btn.addEventListener('click',()=>{
   buildButtons.forEach(b=>b.classList.toggle('active',b===btn));
   const idea=btn.dataset.build;
-  projectEmail.href='mailto:wahomeimani@gmail.com?subject='+encodeURIComponent(idea+' Project Enquiry')+'&body='+encodeURIComponent("Hi Faith,\n\nI'm interested in building a "+idea+".\n\nHere's the idea:\n\n");
+  projectEmail.href='#projectForm';
   projectEmail.textContent='Start '+idea+' →';
 }));
+projectEmail?.addEventListener('click',e=>{
+  if(projectEmail.getAttribute('href')==='#projectForm'){
+    e.preventDefault();
+    document.getElementById('projectForm')?.scrollIntoView({behavior:'smooth',block:'center'});
+    setTimeout(()=>document.querySelector('#projectForm input[name="name"]')?.focus(),350);
+  }
+});
 
 const solutions={
  booking:{title:'Booking + CRM + payment workflow',text:'A custom booking system can centralize availability, customers, staff scheduling, reminders and payments instead of managing everything manually.',tags:['Booking','CRM','Payments','Reminders']},
