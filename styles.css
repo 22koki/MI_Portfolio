@@ -85,3 +85,44 @@ body.dark .problem-shop{background:#121510;color:#fff}body.dark .problem-head p{
 @media(max-width:1000px){.problem-grid{grid-template-columns:1fr 1fr}.solution-panel{grid-template-columns:1fr}.constellation{grid-template-columns:1fr}.recruiter-brief{grid-template-columns:1fr}.tech-orbit{min-height:430px}}@media(max-width:600px){.problem-grid,.form-row,.recruiter-facts{grid-template-columns:1fr}.problem-shop,.constellation{padding-left:20px;padding-right:20px}.tech-orbit{min-height:360px}.tech-orbit button{font-size:8px;padding:7px 9px}}
 
 @media(max-width:600px){.project-card{min-height:360px;padding-top:200px}.project-card:before,.project-card:after{height:180px}}
+
+/* === Slide-out navigation === */
+.menu-toggle{width:46px;height:46px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(14,18,14,.72);display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;cursor:pointer;transition:.25s transform,.25s border-color}
+.menu-toggle:hover{transform:translateY(-2px);border-color:rgba(213,255,128,.65)}
+.menu-toggle span{display:block;width:18px;height:1.5px;background:#f3efe7;border-radius:99px;transition:.3s}
+.menu-backdrop{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.54);backdrop-filter:blur(5px);opacity:0;pointer-events:none;transition:.3s}
+.menu-backdrop.open{opacity:1;pointer-events:auto}
+.rail{position:fixed;z-index:100;top:0;left:0;height:100dvh;width:min(390px,88vw);padding:24px;background:linear-gradient(180deg,#0d120e 0%,#151b14 100%);border-right:1px solid rgba(255,255,255,.08);box-shadow:30px 0 80px rgba(0,0,0,.38);display:flex;flex-direction:column;gap:4px;transform:translateX(-105%);transition:transform .38s cubic-bezier(.22,.75,.22,1)}
+.rail.open{transform:translateX(0)}
+.rail-head{display:flex;justify-content:space-between;align-items:center;padding:4px 0 28px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:12px}
+.rail-head>span{font-size:10px;letter-spacing:.24em;color:#dfff94;font-weight:800}
+.rail-head button{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.14);background:transparent;color:#fff;font-size:26px;cursor:pointer}
+.rail a{display:grid;grid-template-columns:44px 1fr;align-items:center;gap:8px;text-decoration:none;color:#f3efe7;padding:16px 8px;border-bottom:1px solid rgba(255,255,255,.055);font-family:"Playfair Display",serif;font-size:26px;transition:.25s padding-left,.25s color}
+.rail a b{font-family:"DM Sans";font-size:9px;letter-spacing:.16em;color:#798274}
+.rail a:hover{padding-left:16px;color:#dfff94}
+.rail-foot{margin-top:auto;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;gap:5px}
+.rail-foot small{font-weight:800;letter-spacing:.12em}.rail-foot span{font-size:9px;color:#8f998c;letter-spacing:.18em}
+body.menu-open{overflow:hidden}
+
+/* === Growth Lab === */
+.growth-lab{grid-column:span 2;background:radial-gradient(circle at 85% 20%,rgba(203,255,124,.12),transparent 30%),linear-gradient(145deg,#10150f,#171d15)!important;position:relative;overflow:hidden}
+.growth-lab:after{content:"";position:absolute;right:-110px;bottom:-160px;width:380px;height:380px;border:1px solid rgba(223,255,148,.12);border-radius:50%;box-shadow:0 0 0 45px rgba(223,255,148,.025),0 0 0 90px rgba(223,255,148,.02);pointer-events:none}
+.marketing-title{position:relative;z-index:2;align-items:flex-start}
+.marketing-title em{font-style:normal;font-size:9px;letter-spacing:.16em;color:#9aa694;border:1px solid rgba(255,255,255,.1);padding:8px 10px;border-radius:999px}
+.marketing-intro{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:end;margin:28px 0 26px}
+.marketing-intro h3{font-family:"Playfair Display";font-size:clamp(34px,4vw,58px);line-height:.95;margin:0;color:#f5f1e8}
+.marketing-intro h3 i{font-weight:600;color:#dfff94}
+.marketing-intro p{margin:0;color:#b7c0b3;font-size:13px;line-height:1.75}
+.growth-services{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.growth-services article{min-height:185px;border:1px solid rgba(255,255,255,.08);border-radius:17px;padding:17px;background:rgba(255,255,255,.025)}
+.growth-services article>span{font-size:9px;color:#dfff94;letter-spacing:.14em}.growth-services b{display:block;font-size:14px;margin:26px 0 9px}.growth-services p{font-size:11px;line-height:1.55;color:#98a394;margin:0}
+.marketing-system{position:relative;z-index:2;display:grid;grid-template-columns:.8fr .9fr 1.3fr;gap:10px;margin-top:12px}
+.marketing-system>div{border:1px solid rgba(255,255,255,.08);border-radius:17px;padding:16px;background:rgba(255,255,255,.02)}
+.marketing-system small{display:block;font-size:8px;letter-spacing:.18em;color:#dfff94;margin-bottom:12px}
+.marketing-system span{display:inline-block;font-size:9px;padding:7px 8px;border:1px solid rgba(255,255,255,.08);border-radius:999px;margin:0 4px 5px 0;color:#d2d8cf}
+.marketing-bridge strong{display:block;font-family:"Playfair Display";font-size:21px;line-height:1.1;max-width:380px;margin-bottom:14px}
+.marketing-bridge a{font-size:10px;text-decoration:none;color:#dfff94;font-weight:800}
+.form-row.single{grid-template-columns:1fr}
+
+@media(max-width:1100px){.growth-lab{grid-column:1/-1}.growth-services{grid-template-columns:1fr 1fr}.marketing-system{grid-template-columns:1fr 1fr}.marketing-bridge{grid-column:1/-1}}
+@media(max-width:720px){.topnav{display:none}.mode-switch{display:none}.growth-services,.marketing-system,.marketing-intro{grid-template-columns:1fr}.growth-lab{grid-column:auto}.marketing-title em{display:none}.rail a{font-size:23px}}
