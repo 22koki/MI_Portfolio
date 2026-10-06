@@ -190,3 +190,14 @@ repeating-linear-gradient(0deg,transparent 0 21px,rgba(223,255,148,.04) 22px 23p
   .skill-cloud{grid-template-columns:repeat(3,1fr)}
 }
 @media(prefers-reduced-motion:reduce){.orbit-track,.orbit-track button span,.globe-shell,.globe-shell:before,.float-tech,.orbit-pulse{animation:none!important}}
+
+/* Keep rotating tech labels fully visible */
+.tech-orbit{overflow:visible}
+.orbit-track button{transform:rotate(var(--a)) translateX(200px) rotate(calc(var(--a) * -1))}
+.orbit-track button span{white-space:nowrap;min-width:max-content;overflow:visible}
+@media(max-width:1100px){
+  .orbit-track button{transform:rotate(var(--a)) translateX(165px) rotate(calc(var(--a) * -1))}
+}
+@media(max-width:700px){
+  .orbit-track button{transform:rotate(var(--a)) translateX(120px) rotate(calc(var(--a) * -1))}
+}
