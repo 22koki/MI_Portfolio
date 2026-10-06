@@ -201,3 +201,27 @@ repeating-linear-gradient(0deg,transparent 0 21px,rgba(223,255,148,.04) 22px 23p
 @media(max-width:700px){
   .orbit-track button{transform:rotate(var(--a)) translateX(120px) rotate(calc(var(--a) * -1))}
 }
+
+/* Standardize orbit tech chips so every label sits neatly on the orbit */
+.orbit-track button span{
+  min-width:78px;
+  max-width:102px;
+  width:auto;
+  padding:8px 10px;
+  font-size:9px;
+  line-height:1;
+  text-align:center;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  box-sizing:border-box;
+}
+.orbit-track button{transform:rotate(var(--a)) translateX(190px) rotate(calc(var(--a) * -1))}
+@media(max-width:1100px){
+  .orbit-track button span{min-width:72px;max-width:92px;font-size:8.5px;padding:7px 9px}
+  .orbit-track button{transform:rotate(var(--a)) translateX(160px) rotate(calc(var(--a) * -1))}
+}
+@media(max-width:700px){
+  .orbit-track button span{min-width:64px;max-width:82px;font-size:7.5px;padding:7px 8px}
+  .orbit-track button{transform:rotate(var(--a)) translateX(116px) rotate(calc(var(--a) * -1))}
+}
