@@ -76,32 +76,24 @@ const projectData={
     repo:'https://github.com/22koki/TUKO_Market',
     page:'cases/tuko.html'
   },
-  property:{
-    type:'BUSINESS SYSTEM · CONCEPT',
-    title:'Property Management System',
-    summary:'A management concept for property owners and teams to centralize tenants, units, rent, maintenance and reporting.',
-    problem:'Property teams often rely on spreadsheets and chat threads to track tenants, payments and maintenance. The concept focuses on bringing these operational records together.',
-    stack:['Database design','Dashboards','Workflow automation'],
-    highlights:['Tenant and unit management','Rent and payment tracking','Maintenance requests and reporting'],
-    repo:'https://github.com/22koki'
-  },
-  hospital:{
-    type:'BUSINESS SYSTEM · DATABASE',
-    title:'Hospital Management System',
-    summary:'A database-driven hospital operations concept covering patient records, appointments, billing and day-to-day administrative workflows.',
-    problem:'Healthcare administration depends on reliable structured information. This project direction focuses on centralizing the operational data needed by staff.',
-    stack:['Database systems','Business logic','Administrative workflows'],
-    highlights:['Patient and appointment records','Billing and operational data','Structured hospital workflow foundation'],
-    repo:'https://github.com/22koki'
+
+  earthscope:{
+    type:'SURVEYING · GEOSPATIAL BUSINESS WEBSITE',
+    title:'Earth Scope',
+    summary:'A professional business website created to present surveying and geospatial services clearly for land, property and infrastructure clients.',
+    problem:'Surveying companies need to communicate technical services in a way that feels credible, understandable and easy for prospective clients to act on. Earth Scope turns those services into a clear commercial web experience.',
+    stack:['Responsive web design','Service UX','Business content','Lead generation'],
+    highlights:['Surveying and geospatial service presentation','Land, engineering and infrastructure project positioning','Clear Request a Survey conversion path'],
+    repo:null
   },
   riverstone:{
     type:'WEBSITE · DIGITAL MARKETING',
     title:'Riverstone Finishes & Landscapes',
-    summary:'A web and marketing direction for a landscaping business focused on presenting services clearly, improving brand perception and supporting lead generation.',
-    problem:'Service businesses need more than a pretty website. They need clear offers, visual proof, search-friendly structure and marketing content that can turn attention into enquiries.',
-    stack:['Web design','Content strategy','SEO thinking','Social media','Brand presentation'],
-    highlights:['Service-led website structure','Landscaping content and campaign ideas','Conversion-focused messaging and visual positioning'],
-    repo:'https://github.com/22koki'
+    summary:'A polished landscaping business website that presents services, real project work and a direct path from browsing to enquiry.',
+    problem:'A landscaping business needs its website to show the quality of its work immediately, explain its services clearly and make it effortless for a potential client to enquire.',
+    stack:['Responsive web design','Project gallery','WhatsApp CTA','Service content','Brand presentation'],
+    highlights:['Real landscaping work used throughout the site','Service and project-led navigation','Direct request-service and WhatsApp lead paths'],
+    repo:'https://github.com/22koki/Landscape_web'
   },
   ghost:{
     type:'GAME PRODUCT · CREATIVE DEVELOPMENT',
@@ -133,7 +125,7 @@ function openProject(key){
   modalProblem.textContent=data.problem;
   modalStack.innerHTML=data.stack.map(item=>'<span>'+item+'</span>').join('');
   modalHighlights.innerHTML=data.highlights.map(item=>'<div>'+item+'</div>').join('');
-  modalRepo.href=data.repo;
+  if(data.repo){modalRepo.href=data.repo;modalRepo.style.display='inline-flex';}else{modalRepo.removeAttribute('href');modalRepo.style.display='none';}
   if(data.page){modalCase.href=data.page;modalCase.style.display='inline-flex';}else{modalCase.style.display='none';}
   modal.classList.add('open');
   modal.setAttribute('aria-hidden','false');
