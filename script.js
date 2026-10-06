@@ -1,3 +1,28 @@
+const menuToggle=document.getElementById('menuToggle');
+const siteMenu=document.getElementById('siteMenu');
+const menuBackdrop=document.getElementById('menuBackdrop');
+const menuClose=document.getElementById('menuClose');
+function openMenu(){
+  siteMenu?.classList.add('open');
+  menuBackdrop?.classList.add('open');
+  siteMenu?.setAttribute('aria-hidden','false');
+  menuBackdrop?.setAttribute('aria-hidden','false');
+  menuToggle?.setAttribute('aria-expanded','true');
+  document.body.classList.add('menu-open');
+}
+function closeMenu(){
+  siteMenu?.classList.remove('open');
+  menuBackdrop?.classList.remove('open');
+  siteMenu?.setAttribute('aria-hidden','true');
+  menuBackdrop?.setAttribute('aria-hidden','true');
+  menuToggle?.setAttribute('aria-expanded','false');
+  document.body.classList.remove('menu-open');
+}
+menuToggle?.addEventListener('click',()=>siteMenu?.classList.contains('open')?closeMenu():openMenu());
+menuClose?.addEventListener('click',closeMenu);
+menuBackdrop?.addEventListener('click',closeMenu);
+siteMenu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+
 
 const themeToggle=document.getElementById('themeToggle');
 themeToggle.addEventListener('click',()=>{
@@ -64,7 +89,8 @@ const projectData={
     problem:'Typical travel content can feel static. This product uses short discovery loops, passport mechanics and destination storytelling to make exploration more memorable.',
     stack:['React','Vite','Local storage','Interactive UX'],
     highlights:['Destination discovery and Surprise Me flow','Digital passport and favorites/history','Culture, food, facts and place exploration'],
-    repo:'https://github.com/22koki/One_Min_From_Earth'
+    repo:'https://github.com/22koki/One_Min_From_Earth',
+    page:'cases/one-minute-earth.html'
   },
   tuko:{
     type:'MARKETPLACE · LOCAL COMMERCE',
@@ -84,7 +110,8 @@ const projectData={
     problem:'Surveying companies need to communicate technical services in a way that feels credible, understandable and easy for prospective clients to act on. Earth Scope turns those services into a clear commercial web experience.',
     stack:['Responsive web design','Service UX','Business content','Lead generation'],
     highlights:['Surveying and geospatial service presentation','Land, engineering and infrastructure project positioning','Clear Request a Survey conversion path'],
-    repo:null
+    repo:null,
+    page:'cases/earth-scope.html'
   },
   riverstone:{
     type:'WEBSITE · DIGITAL MARKETING',
@@ -93,7 +120,8 @@ const projectData={
     problem:'A landscaping business needs its website to show the quality of its work immediately, explain its services clearly and make it effortless for a potential client to enquire.',
     stack:['Responsive web design','Project gallery','WhatsApp CTA','Service content','Brand presentation'],
     highlights:['Real landscaping work used throughout the site','Service and project-led navigation','Direct request-service and WhatsApp lead paths'],
-    repo:'https://github.com/22koki/Landscape_web'
+    repo:'https://github.com/22koki/Landscape_web',
+    page:'cases/riverstone.html'
   },
   ghost:{
     type:'GAME PRODUCT · CREATIVE DEVELOPMENT',
@@ -102,7 +130,8 @@ const projectData={
     problem:'The project explores how product systems, progression and art direction can work together to create a memorable interactive experience.',
     stack:['Godot','Game systems','Creative direction','UI design'],
     highlights:['Persistent progression and themed rooms','Supernatural guest and hotel mechanics','Strong visual direction with atmospheric presentation'],
-    repo:'https://github.com/22koki/tiny-ghost-hotel'
+    repo:'https://github.com/22koki/tiny-ghost-hotel',
+    page:'cases/tiny-ghost-hotel.html'
   }
 };
 
@@ -184,7 +213,7 @@ document.addEventListener('keydown',e=>{
   if(e.key==='/' && !['INPUT','TEXTAREA'].includes(document.activeElement.tagName)){
     e.preventDefault(); openCommand();
   }
-  if(e.key==='Escape'){ closeCommand(); closeProject(); }
+  if(e.key==='Escape'){ closeCommand(); closeProject(); closeMenu(); }
 });
 
 document.querySelectorAll('[data-command]').forEach(btn=>btn.addEventListener('click',()=>{
@@ -267,7 +296,6 @@ document.getElementById('projectForm')?.addEventListener('submit',e=>{
     'Name: '+data.get('name'),
     'Email: '+data.get('email'),
     'Project: '+selected,
-    'Budget: '+data.get('budget'),
     'Timeline: '+data.get('timeline'),'',
     'Project idea:',
     data.get('message')
